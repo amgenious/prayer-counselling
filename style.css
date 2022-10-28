@@ -1,0 +1,90 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Style the buttons that are used to open and close the accordion panel */
+.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+  }
+  
+  /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+  .active, .accordion:hover {
+    background-color: #ccc;
+  }
+  
+  /* Style the accordion panel. Note: hidden by default */
+  .panel {
+    padding: 0 18px;
+    background-color: white;
+    display: none;
+    overflow: hidden;
+  }
+  .accordion:after {
+    content: '\02795'; /* Unicode character for "plus" sign (+) */
+    font-size: 13px;
+    color: #777;
+    float: right;
+    margin-left: 5px;
+  }
+  
+  .active:after {
+    content: "\2796"; /* Unicode character for "minus" sign (-) */
+  }
+  .panel form {
+    display: flex;
+    flex-direction: column;
+  }
+  .panel form input{
+    height: 40px;
+    border-radius: 10px;
+    outline: none;
+    border: 1px solid grey;
+    padding: 10px;
+  }
+  .panel form input::placeholder{
+    opacity: 0.5;
+  }
+  .panel form i{
+    opacity: 0.6;
+    font-size: small;
+  }
+  .panel form textarea{
+    height: 20vh;
+    border-radius: 20px;
+    padding: 10px;
+    margin-top: 5px;
+  }
+  .panel form textarea::placeholder{
+    opacity: 0.5;
+  }
+  .panel button{
+    margin-top: 5px;
+    margin-bottom: 10px;
+    width: 20%;
+  }
+  .adv,.adv1{
+    height: 50vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .adv{
+    background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1523803326055-9729b9e02e5a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8cHJheWVyfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60');
+  }
+  .adv1{
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1611858977757-8f7cdc084d3b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8ZGVwcmVzc2VkfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60');
+  }

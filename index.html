@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nubs Prayer and Counselling Request</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("0tLMj70O4HJ2Pzcsm");
+        })();
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="adv" style="margin-top: 20px;">
+                    <h1>Are you Disturbed ?</h1>
+                    <h1>Are you Troubled ?</h1>
+                    <h1>Do you feel weak in the Spirit ?</h1>
+                    <h1>Do you need help ?</h1>
+                    <p><i>For God did not appoint us to suffer wrath but to receive salvation through our Lord Jesus Christ.</i><br><b>1 Thessalonians 5:9(NIV)</b></b></p>
+                    <p>Send to us your prayer request(s)</p>
+                </div>
+                <button class="accordion">Send a prayer request</button>
+                <div class="panel">
+                    <form method="post">
+                        <br>
+                        <input type="text" placeholder="name" id="name">
+                        <i>*Please you can choose to add your name or not.</i>
+                        <input type="text" placeholder="email" id="email">
+                        <textarea cols="50" rows="30" placeholder="type your prayer request" id="message"
+                            required></textarea>
+                    </form>
+                    <button class="btn btn-success" onclick="sent()">Submit</button>
+                </div>
+                <br>
+                <br>
+                <div class="adv1">
+                    <h1>Do you feel Lonely ?</h1>
+                    <h1>Do you feel Anxious ?</h1>
+                    <h1>Do you feel Depressed ?</h1>
+                    <h1>Do you need someone to talk to ?</h1>
+                    <p>Write to us, we are all ears.</p>
+                </div>
+                <button class="accordion">Write to Counsellors</button>
+                <div class="panel">
+                    <form method="post">
+                        <br>
+                        <input type="text" placeholder="name" id="named">
+                        <i>*Please you can choose to add your name or not.</i>
+                        <input type="text" placeholder="email" id="emaile">
+                        <textarea cols="50" rows="30" placeholder="type your request" id="messaged"
+                            required></textarea>
+                    </form>
+                    <button class="btn btn-success" onclick="sente()">Submit</button>
+                </div>
+                <p><i><b>All messages sent to use are confidential and will remain with us.</b></i></p>
+                <script>
+                    function sent() {
+                        var params = {
+                            from_name: document.getElementById("name").value,
+                            email: document.getElementById("email").value,
+                            message: document.getElementById("message").value
+                        }
+                        emailjs.send("service_v5ocjzu", "template_31p3p0s", params).then(function (res) {
+                            swal({
+                    text: "Submitted Succesfully",
+                    icon: "success",
+                    button: "Ok"
+                });
+                        })
+                    }
+                </script>
+                <script>
+                    function sente() {
+                        var params = {
+                            from_name: document.getElementById("named").value,
+                            email: document.getElementById("emaile").value,
+                            message: document.getElementById("messaged").value
+                        }
+                        emailjs.send("service_v5ocjzu", "template_31p3p0s", params).then(function (res) {
+                            swal({
+                    text: "Submitted Succesfully",
+                    icon: "success",
+                    button: "Ok"
+                });
+                        })
+                    }
+                </script>
+                <!-- <script>
+                    function sent() {
+                        let name = document.getElementById("name").value
+                        let email = document.getElementById("email").value
+                        let message = document.getElementById("message").value
+                        let body = 'name: ' + name + '<br/> message: ' + message;
+                        // console.log(body);
+                        Email.send({
+                            // SecureToken: "b49bffb5-2659-4926-b795-2ceb5d3f2249",
+                            Host : "smtp.elasticemail.com",
+                            Username : "henrytweneboah956@gmail.com",
+                            Password : "60AF1E1E2BF366EE82BB2CD6840A69F91FB5",
+                            To: 'henrytweneboah956@gmail.com',
+                            From: email,
+                            Subject: "This is the subject",
+                            Body: body
+                        }).then(
+                            message => alert(message)
+                        );
+                    }
+                </script> -->
+                <!-- <button class="accordion">Send Message to Counselling Committee</button>
+                <div class="panel">x
+                    <form method="post">
+                        <br>
+                        <input type="text" placeholder="name" id="name">
+                        <i>*Please you can choose to add your name or not.</i>
+                        <textarea cols="50" rows="30" placeholder="type your worries" id="message" required></textarea>
+                    </form>
+                    <button class="btn btn-success" id="btn1" >Submit</button> -->
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="app.js"></script>
+
+</body>
+
+</html>
